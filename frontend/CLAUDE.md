@@ -154,8 +154,14 @@ Forbidden segment names (Steiger `segments-by-purpose`): `components`, `hooks`, 
 
 ## Testing
 
-Not set up yet. When added: Vitest for unit tests, Playwright for e2e,
-tests colocated with the slice they cover. Do not reference `test` scripts until they exist in `package.json`.
+- **E2E: Playwright** (`@playwright/test`, Chromium). Config: `playwright.config.ts`.
+  - Specs live in `e2e/` (outside `src/`, so FSD lint/Steiger rules don't apply), named `*.spec.ts`.
+  - `bun run test:e2e` — run all e2e tests (auto-starts `next dev`, or reuses a running server on :3000)
+  - `bun run test:e2e:ui` — Playwright UI mode; `bun run test:e2e:report` — open the last HTML report
+  - Set `PLAYWRIGHT_BASE_URL` to test an already deployed/running app without starting a server.
+  - In CI (`CI=1`) tests run against `next build && next start` with retries.
+  - First-time setup: `bunx playwright install chromium`.
+- Unit tests (Vitest): not set up yet. Do not reference unit `test` scripts until they exist in `package.json`.
 
 ## Common gotchas
 
