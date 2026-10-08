@@ -1,0 +1,10 @@
+{
+  "name": "websocket-realtime-notifications",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
