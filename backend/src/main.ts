@@ -8,8 +8,8 @@ import helmet from 'helmet';
 import { cleanupOpenApiDoc } from 'nestjs-zod';
 
 import { createSwaggerConfig, TEnv } from '@/config';
-import { AppModule } from '@/modules';
 
+import { AppModule } from './module/AppModule';
 import { GlobalExceptionsFilter } from './shared/filters';
 import { ApiResponseInterceptor } from './shared/interceptors';
 import { GlobalValidationPipe } from './shared/pipes';

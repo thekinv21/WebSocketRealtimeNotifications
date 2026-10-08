@@ -4,12 +4,14 @@ import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 
 import { ZodSerializerInterceptor, ZodValidationPipe } from 'nestjs-zod';
 
+import { PrismaModule } from '@/shared/prisma/PrismaModule';
+
 import { validateEnv } from '@/config';
 
-import { AuthModule } from './AuthModule';
-import { PostModule } from './PostModule';
-import { RoleModule } from './RoleModule';
-import { UserModule } from './UserModule';
+import { AuthModule } from './auth/AuthModule';
+import { PostModule } from './post/PostModule';
+import { RoleModule } from './role/RoleModule';
+import { UserModule } from './user/UserModule';
 
 @Module({
   imports: [
@@ -17,6 +19,7 @@ import { UserModule } from './UserModule';
       isGlobal: true,
       validate: validateEnv,
     }),
+    PrismaModule,
     AuthModule,
     UserModule,
     RoleModule,

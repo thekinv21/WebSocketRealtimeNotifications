@@ -20,6 +20,10 @@ export const envSchema = z.looseObject({
   PORT: positiveInt().max(65535),
   CORS_ORIGINS: urlList(),
   DATABASE_URL: nonEmptyString(),
+  JWT_ACCESS_SECRET: nonEmptyString().min(32),
+  JWT_REFRESH_SECRET: nonEmptyString().min(32),
+  JWT_ACCESS_EXPIRES_IN: nonEmptyString(),
+  JWT_REFRESH_EXPIRES_IN: nonEmptyString(),
 });
 
 export type TEnv = z.infer<typeof envSchema>;
