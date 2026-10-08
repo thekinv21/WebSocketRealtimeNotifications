@@ -6,6 +6,7 @@ import { ZodSerializerInterceptor, ZodValidationPipe } from 'nestjs-zod';
 
 import { validateEnv } from '@/config';
 
+import { AuthModule } from './AuthModule';
 import { PostModule } from './PostModule';
 import { RoleModule } from './RoleModule';
 import { UserModule } from './UserModule';
@@ -16,6 +17,7 @@ import { UserModule } from './UserModule';
       isGlobal: true,
       validate: validateEnv,
     }),
+    AuthModule,
     UserModule,
     RoleModule,
     PostModule,
