@@ -9,11 +9,8 @@
 		"lint": "eslint && steiger ./src",
 		"lint:fix": "eslint --fix && steiger ./src --fix",
 		"lint:fsd": "steiger ./src",
-		"test:e2e": "playwright test",
-		"test:e2e:ui": "playwright test --ui",
-		"test:e2e:report": "playwright show-report",
-		"format": "prettier --write \"{app,src,e2e}/**/*.{ts,tsx}\" steiger.config.ts playwright.config.ts",
-		"format:check": "prettier --check \"{app,src,e2e}/**/*.{ts,tsx}\"",
+		"format": "prettier --write \"{app,src}/**/*.{ts,tsx}\" steiger.config.ts",
+		"format:check": "prettier --check \"{app,src}/**/*.{ts,tsx}\"",
 		"prepare": "cd .. && husky frontend/.husky"
 	},
 	"dependencies": {
@@ -30,7 +27,6 @@
 	},
 	"devDependencies": {
 		"@feature-sliced/steiger-plugin": "^0.8.0",
-		"@playwright/test": "^1.64.0",
 		"@tailwindcss/turbopack": "^4",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@types/node": "^20",
