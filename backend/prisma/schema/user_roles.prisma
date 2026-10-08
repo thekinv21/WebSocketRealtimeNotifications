@@ -1,0 +1,9 @@
+model UserRoles {
+  id         String   @id @default(cuid())
+  roleId     String
+  assignedBy String
+  assignedAt DateTime @default(now())
+  role       Role     @relation(fields: [roleId], references: [id])
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+}
