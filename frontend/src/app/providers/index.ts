@@ -1,1 +1,1 @@
-export * from './Providers'
+export { Providers } from './Providers'

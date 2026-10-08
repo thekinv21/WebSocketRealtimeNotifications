@@ -6,8 +6,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "eslint",
-		"format": "prettier --write \"{app,src}/**/*.{ts,tsx}\"",
+		"lint": "eslint && steiger ./src",
+		"lint:fix": "eslint --fix && steiger ./src --fix",
+		"lint:fsd": "steiger ./src",
+		"format": "prettier --write \"{app,src}/**/*.{ts,tsx}\" steiger.config.ts",
 		"format:check": "prettier --check \"{app,src}/**/*.{ts,tsx}\"",
 		"prepare": "cd .. && husky frontend/.husky"
 	},
@@ -24,6 +26,7 @@
 		"zod": "^4.6.5"
 	},
 	"devDependencies": {
+		"@feature-sliced/steiger-plugin": "^0.8.0",
 		"@tailwindcss/turbopack": "^4",
 		"@trivago/prettier-plugin-sort-imports": "^6.0.2",
 		"@types/node": "^20",
@@ -31,8 +34,10 @@
 		"@types/react-dom": "^19",
 		"eslint": "^9",
 		"eslint-config-next": "16.4.0",
+		"eslint-plugin-boundaries": "^7.2.0",
 		"husky": "^9.1.7",
 		"prettier": "^3.9.9",
+		"steiger": "^0.7.0",
 		"tailwindcss": "^4",
 		"typescript": "^5"
 	},
